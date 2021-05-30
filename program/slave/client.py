@@ -1,4 +1,7 @@
+# ./program/master/server.py
+
 import socket
+
 from PIL import Image
 import pytesseract
 

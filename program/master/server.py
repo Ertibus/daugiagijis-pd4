@@ -6,6 +6,8 @@ import sys
 import time
 import threading
 
+from PIL import Image
+
 class Server:
     host = "localhost"
     port = 6060
