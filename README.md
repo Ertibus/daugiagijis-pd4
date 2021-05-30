@@ -14,4 +14,5 @@ Sukurkite sklandžiai veikiančią daugiagiję _Sender-Receiver_ programą, kuri
 - _Slave_ gijai atlikus užduotį jai siunčiami kiti 5 paveikslėliai (__10 taškų__);
 - _Slave_ gijų kiekis gali būti nuo 1 iki begalybės. Kiekviena _Slave_ gija turi jungtis prie _Master_ gijos (__20 taškų__);
 
+## Description
 ## Dependencies
