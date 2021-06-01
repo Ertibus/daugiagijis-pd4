@@ -62,13 +62,13 @@ class Client:
 
             self.client_socket.send('DATA'.encode('utf-8'))
             image_stream = io.BytesIO()
-            with tqdm.tqdm(range(filesize), f"Receiving {filename}:", unit="B", unit_scale=True, unit_divisor=1024) as progress:
-                while True:
+            downloaded=0
+            with tqdm.tqdm(range(filesize), f"Receiving {filename}:", unit="B", unit_scale=True, unit_divisor=1024, position=1) as progress:
+                while downloaded < filesize:
                     buffer_read = self.client_socket.recv(self.BUFFER_SIZE)
                     image_stream.write(buffer_read)
                     progress.update(len(buffer_read))
-                    if len(buffer_read) < self.BUFFER_SIZE:
-                        break;
+                    downloaded+=len(buffer_read)
             img_data = image_stream
             rcv_img = Image.open(img_data)
             self.images_list.append(rcv_img)
